@@ -21,6 +21,7 @@ button {
   height: 300px;
 }
 
-button#rock {
-  background: "images/rock.png";
+img {
+  max-width: 100%;
+  height: auto;
 }
