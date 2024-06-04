@@ -22,7 +22,6 @@ button {
 }
 
 button img {
-  max-width: 100%;
-  height: auto;
-  border: 2px red solid;
+  
+  border: 2px black solid;
 }
