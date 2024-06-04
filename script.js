@@ -1,9 +1,33 @@
 // logic for a Rock, Paper, Scissors game
 
+const playerChoice = document.querySelector(".playerChoice");
+const rockBtn = document.querySelector("#rock");
+const paperBtn = document.querySelector("#paper");
+const scissorsBtn = document.querySelector("#scissors");
+
+playerChoice.addEventListener("click", (event) => {
+    let target = event.target;
+
+    switch (target.id) {
+        case "rock":
+            console.log("rock was clicked");
+            break;
+        
+        case "paper":
+            console.log("paper was clicked");
+            break;
+        
+        case "scissors":
+            console.log("scissors was clicked");
+            break;
+    }
+});
+
+
 let moves_list = ["rock", "paper", "scissors"];
 
 function getUserMove() {
-    // let player_move = prompt("Rock, paper or scissors? Choose your move!");
+    let player_move = prompt("Rock, paper or scissors? Choose your move!");
     let formatted_player_move = player_move.toLowerCase();
     if (moves_list.includes(formatted_player_move)) {
         console.log("player: " + formatted_player_move);
@@ -85,4 +109,5 @@ function playGame() {
 
 
 // roundPlay(getUserMove(), getComputerChoice())
-playGame()
+
+// playGame()
