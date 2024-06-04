@@ -21,7 +21,8 @@ button {
   height: 300px;
 }
 
-img {
+button img {
   max-width: 100%;
   height: auto;
+  border: 2px red solid;
 }
