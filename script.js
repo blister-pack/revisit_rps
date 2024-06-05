@@ -11,36 +11,36 @@ playerChoice.addEventListener("mouseover", handlePlayerChoice);
 
 function handlePlayerChoice(event) {
     let target = event.target;
-    switch (target.id) {
-        case "rock":
+    switch (`${target.id}-${event.type}`) {
+        case "rock-click":
             console.log("rock was clicked");
             break;
         
-        case "paper":
+        case "paper-click":
             console.log("paper was clicked");
             break;
         
-        case "scissors":
+        case "scissors-click":
             console.log("scissors was clicked");
+            break;
+        case "rock-mouseover":
+            console.log("rock was hovered over");
+            break;
+        
+        case "paper-mouseover":
+            console.log("paper was hovered over");
+            break;
+        
+        case "scissors-mouseover":
+            console.log("scissors was hovered over");
             break;
     }
 }
 
 
 
-    switch (target.id) {
-        case "rock":
-            console.log("rock was hovered over");
-            break;
-        
-        case "paper":
-            console.log("paper was hovered over");
-            break;
-        
-        case "scissors":
-            console.log("scissors was hovered over");
-            break;
-    }
+
+
 
 
 
