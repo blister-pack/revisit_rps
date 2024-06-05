@@ -5,9 +5,12 @@ const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
 
-playerChoice.addEventListener("click", (event) => {
-    let target = event.target;
+playerChoice.addEventListener("click", handlePlayerChoice);
+playerChoice.addEventListener("mouseover", handlePlayerChoice);
 
+
+function handlePlayerChoice(event) {
+    let target = event.target;
     switch (target.id) {
         case "rock":
             console.log("rock was clicked");
@@ -21,10 +24,9 @@ playerChoice.addEventListener("click", (event) => {
             console.log("scissors was clicked");
             break;
     }
-});
+}
 
-playerChoice.addEventListener("mouseover", (event) => {
-    let target = event.target;
+
 
     switch (target.id) {
         case "rock":
@@ -40,7 +42,7 @@ playerChoice.addEventListener("mouseover", (event) => {
             break;
     }
 
-});
+
 
 
 let moves_list = ["rock", "paper", "scissors"];
