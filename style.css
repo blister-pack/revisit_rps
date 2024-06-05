@@ -16,17 +16,12 @@ div {
   margin-bottom: 50px;
 }
 
-button {
-  width: 300px;
-  height: 300px;
-}
-
 input {
   width: 250px;
   height: 250px;
   border: 2px black solid;
 }
 
-.scoreboard {
-  ;
+input:hover {
+  border: 2px red solid;
 }

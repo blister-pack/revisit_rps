@@ -23,6 +23,7 @@ function handlePlayerChoice(event) {
         case "scissors-click":
             console.log("scissors was clicked");
             break;
+        
         case "rock-mouseover":
             console.log("rock was hovered over");
             break;
@@ -36,13 +37,6 @@ function handlePlayerChoice(event) {
             break;
     }
 }
-
-
-
-
-
-
-
 
 
 let moves_list = ["rock", "paper", "scissors"];
