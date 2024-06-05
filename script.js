@@ -23,6 +23,25 @@ playerChoice.addEventListener("click", (event) => {
     }
 });
 
+playerChoice.addEventListener("mouseover", (event) => {
+    let target = event.target;
+
+    switch (target.id) {
+        case "rock":
+            console.log("rock was hovered over");
+            break;
+        
+        case "paper":
+            console.log("paper was hovered over");
+            break;
+        
+        case "scissors":
+            console.log("scissors was hovered over");
+            break;
+    }
+
+});
+
 
 let moves_list = ["rock", "paper", "scissors"];
 
