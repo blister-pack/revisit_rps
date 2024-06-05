@@ -21,7 +21,7 @@ playerChoice.addEventListener("click", (event) => {
             console.log("scissors was clicked");
             break;
     }
-}); //problem is if the image in the button is clicked nothing happens
+});
 
 
 let moves_list = ["rock", "paper", "scissors"];

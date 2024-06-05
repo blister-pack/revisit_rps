@@ -21,7 +21,8 @@ button {
   height: 300px;
 }
 
-button img {
-  
+input {
+  width: 250px;
+  height: 250px;
   border: 2px black solid;
 }
