@@ -13,7 +13,7 @@ div {
   display: flex;
   justify-content: center;
   gap: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 input {
@@ -24,4 +24,15 @@ input {
 
 input:hover {
   border: 2px red solid;
+}
+
+.narrator {
+  font-size: 40px;
+  margin-bottom: 0;
+}
+
+.scoreBoard {
+  border: 2px black solid;
+  margin: auto 340px;
+  font-size: 50px;
 }
