@@ -14,14 +14,17 @@ function handlePlayerChoice(event) {
     switch (`${target.id}-${event.type}`) {
         case "rock-click":
             console.log("rock was clicked");
+            roundPlay(getUserMove(target.id), getComputerChoice());
             break;
         
         case "paper-click":
             console.log("paper was clicked");
+            roundPlay(getUserMove(target.id), getComputerChoice());
             break;
         
         case "scissors-click":
             console.log("scissors was clicked");
+            roundPlay(getUserMove(target.id), getComputerChoice());
             break;
         
         case "rock-mouseover":
@@ -41,8 +44,8 @@ function handlePlayerChoice(event) {
 
 let moves_list = ["rock", "paper", "scissors"];
 
-function getUserMove() {
-    let player_move = prompt("Rock, paper or scissors? Choose your move!");
+function getUserMove(move) {
+    let player_move = move;
     let formatted_player_move = player_move.toLowerCase();
     if (moves_list.includes(formatted_player_move)) {
         console.log("player: " + formatted_player_move);
