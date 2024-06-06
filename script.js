@@ -89,7 +89,9 @@ function roundPlay(playerSelection, computerSelection) {
     // this function returns the winner of the round
     if (playerSelection == computerSelection) {
         // draw
-        console.log(`That's a draw, the player and the computer chose the same move!`);
+        let drawMessage = (`That's a draw, the player and the computer chose the same move!`);
+        console.log(drawMessage);
+        narrator.textContent = drawMessage;
         return `draw`;
     } else if ((playerSelection == "rock" && computerSelection == "scissors") ||
         (playerSelection == "paper" && computerSelection == "rock") ||
@@ -114,10 +116,14 @@ function roundResultMessage(win = true, playerSelection, computerSelection) {
 
     if (win === true) {
         // victory message
-        return `You win! ${formatted_playerSelection} beats ${formatted_computerSelection}!`;
+        let victoryMessage = `You win! ${formatted_playerSelection} beats ${formatted_computerSelection}!`;
+        narrator.textContent = victoryMessage;
+        return victoryMessage;
     } else {
         // losing message
-        return `You lose! ${formatted_computerSelection} beats ${formatted_playerSelection}!`;
+        let lossMessage = `You lose! ${formatted_computerSelection} beats ${formatted_playerSelection}!`;
+        narrator.textContent = lossMessage;
+        return lossMessage;
     }
 }
 
