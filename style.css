@@ -76,8 +76,7 @@ input:hover {
 
 .scoreBoard {
   border: 2px black solid;
-  /* margin: auto 340px; */
   justify-content: center;
-  width: 300px;
+  width: 600px;
   font-size: 50px;
 }
