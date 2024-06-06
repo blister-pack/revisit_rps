@@ -8,6 +8,12 @@ const scissorsBtn = document.querySelector("#scissors");
 playerChoice.addEventListener("click", handlePlayerChoice);
 playerChoice.addEventListener("mouseover", handlePlayerChoice);
 
+const pcChoice = document.querySelector("#pcChoice");
+const narrator = document.querySelector(".narrator");
+const playerScore = document.querySelector(".scoreBoard .playerScore");
+const pcScore = document.querySelector(".scoreBoard .pcScore");
+
+
 
 function handlePlayerChoice(event) {
     let target = event.target;
@@ -60,7 +66,23 @@ function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
     // 0 is rock; 1 is paper; 2 is scissors
     console.log("pc: " + moves_list[choice]);
+    changeComputerChoiceImage(moves_list[choice]);
     return moves_list[choice];
+}
+
+function changeComputerChoiceImage(imgName) {
+    switch (imgName) {
+        case "rock":
+            pcChoice.src = "images/rock.png";
+            break;
+        case "paper":
+            pcChoice.src = "images/paper.png";
+            break;
+        case "scissors":
+            pcChoice.src = "images/scissors.png";
+        default:
+            break;
+    }
 }
 
 function roundPlay(playerSelection, computerSelection) {
