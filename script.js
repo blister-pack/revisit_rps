@@ -5,15 +5,13 @@ const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
 
-playerChoice.addEventListener("click", handlePlayerChoice);
-playerChoice.addEventListener("mouseover", handlePlayerChoice);
-
 const pcChoice = document.querySelector("#pcChoice");
 const narrator = document.querySelector(".narrator");
 const playerScore = document.querySelector(".scoreBoard .playerScore");
 const pcScore = document.querySelector(".scoreBoard .pcScore");
 
 
+playerChoice.addEventListener("click", handlePlayerChoice);
 
 function handlePlayerChoice(event) {
     let target = event.target;
@@ -31,18 +29,6 @@ function handlePlayerChoice(event) {
         case "scissors-click":
             console.log("scissors was clicked");
             roundPlay(getUserMove(target.id), getComputerChoice());
-            break;
-        
-        case "rock-mouseover":
-            console.log("rock was hovered over");
-            break;
-        
-        case "paper-mouseover":
-            console.log("paper was hovered over");
-            break;
-        
-        case "scissors-mouseover":
-            console.log("scissors was hovered over");
             break;
     }
 }
