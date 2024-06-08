@@ -10,6 +10,9 @@ const narrator = document.querySelector(".narrator");
 const playerScore = document.querySelector(".scoreBoard .playerScore");
 const pcScore = document.querySelector(".scoreBoard .pcScore");
 
+let player_score = 0;
+let pc_score = 0;
+
 
 playerChoice.addEventListener("click", handlePlayerChoice);
 
@@ -69,6 +72,7 @@ function changeComputerChoiceImage(imgName) {
         default:
             break;
     }
+    scoreCounter();
 }
 
 function roundPlay(playerSelection, computerSelection) {
@@ -115,8 +119,8 @@ function roundResultMessage(win = true, playerSelection, computerSelection) {
 
 function playGame() {
     // this function plays a game of janken with 5 rounds
-    let player_score = 0;
-    let pc_score = 0;
+    // let player_score = 0;
+    // let pc_score = 0;
     // let round_end_message = (roundPlay(getUserMove(), getComputerChoice()));
     // console.log(round_end_message);
 
@@ -138,7 +142,28 @@ function playGame() {
     }
 }    
 
+function roundCounter(rounds=5) {
+    // a function that sets how many rounds should be played in a game
+}
 
+function scoreCounter() {
+    // a function that keeps track of player and pc score, also showing it on the GUI
+
+    let round_end_message = (roundPlay(getUserMove(), getComputerChoice()));
+    console.log(round_end_message);
+
+    if (round_end_message.includes("win") === true) {
+        player_score++;
+    } else if (round_end_message.includes("lose") === true) {
+        pc_score++;
+    }
+    // if one of these messages had both keywords, would it increment in both places?
+    console.log(`PLAYER SCORE: ${player_score}`);
+    console.log(`PC SCORE: ${pc_score}`);
+
+    playerScore.textContent = player_score;
+    pcScore.textContent = pc_score;
+}
 
 // roundPlay(getUserMove(), getComputerChoice())
 
