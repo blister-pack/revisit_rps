@@ -60,19 +60,8 @@ function getComputerChoice() {
 }
 
 function changeComputerChoiceImage(imgName) {
-    switch (imgName) {
-        case "rock":
-            pcChoice.src = "images/rock.png";
-            break;
-        case "paper":
-            pcChoice.src = "images/paper.png";
-            break;
-        case "scissors":
-            pcChoice.src = "images/scissors.png";
-        default:
-            break;
-    }
-    scoreCounter();
+    pcChoice.src = `images/${imgName}.png`;
+    // scoreCounter();
 }
 
 function roundPlay(playerSelection, computerSelection) {
