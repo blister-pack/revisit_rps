@@ -17,23 +17,9 @@ let pc_score = 0;
 playerChoice.addEventListener("click", handlePlayerChoice);
 
 function handlePlayerChoice(event) {
-    let target = event.target;
-    switch (`${target.id}-${event.type}`) {
-        case "rock-click":
-            console.log("rock was clicked");
-            roundPlay(getUserMove(target.id), getComputerChoice());
-            break;
-        
-        case "paper-click":
-            console.log("paper was clicked");
-            roundPlay(getUserMove(target.id), getComputerChoice());
-            break;
-        
-        case "scissors-click":
-            console.log("scissors was clicked");
-            roundPlay(getUserMove(target.id), getComputerChoice());
-            break;
-    }
+    // let target = event.target;
+    let playerMove = event.target.id;
+    roundPlay(getUserMove(playerMove), getComputerChoice());
 }
 
 
