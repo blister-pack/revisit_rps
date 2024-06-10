@@ -20,24 +20,14 @@ playerChoice.addEventListener("click", handlePlayerChoice);
 function handlePlayerChoice(event) {
     // let target = event.target;
     let playerMove = event.target.id;
-    roundPlay(getUserMove(playerMove), getComputerChoice());
-}
-
-
-function getUserMove(move) {
-    let player_move = move;
-    let formatted_player_move = player_move.toLowerCase();
-    if (moves_list.includes(formatted_player_move)) {
-        console.log("player: " + formatted_player_move);
-        return formatted_player_move;
-    } else {
-        alert("Your move is not valid. Refresh to try again.");
-    }
+    console.log("player: " + playerMove);
+    roundPlay(playerMove, getComputerChoice());
 }
 
 function getComputerChoice() {
     // this function returns the choice of the computer (random)
     let choice = Math.floor(Math.random() * 3);
+
     // 0 is rock; 1 is paper; 2 is scissors
     console.log("pc: " + moves_list[choice]);
     changeComputerChoiceImage(moves_list[choice]);
