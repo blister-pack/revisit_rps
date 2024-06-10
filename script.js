@@ -13,6 +13,7 @@ const pcScore = document.querySelector(".scoreBoard .pcScore");
 let player_score = 0;
 let pc_score = 0;
 
+let moves_list = ["rock", "paper", "scissors"];
 
 playerChoice.addEventListener("click", handlePlayerChoice);
 
@@ -22,8 +23,6 @@ function handlePlayerChoice(event) {
     roundPlay(getUserMove(playerMove), getComputerChoice());
 }
 
-
-let moves_list = ["rock", "paper", "scissors"];
 
 function getUserMove(move) {
     let player_move = move;
