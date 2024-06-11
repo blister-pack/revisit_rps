@@ -27,7 +27,7 @@ input:hover {
 }
 
 .narrator {
-  font-size: 40px;
+  font-size: 35px;
   margin-bottom: 0;
   animation: rainbow 2.5s linear;
   animation-iteration-count: infinite;

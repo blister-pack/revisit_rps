@@ -28,11 +28,10 @@ function handlePlayerChoice(event) {
     // there should be a for cycle or similar that replaces the need for
     // initializing a counting variable
 
-    round_count++;
-
     if (round_count < 5) {
         let roundResult = roundPlay(playerMove, getComputerChoice());
         scoreCounter(roundResult);
+        roundCounter();
     } else {
         console.log("game over");
         alert("Game over!")
@@ -58,7 +57,7 @@ function roundPlay(playerSelection, computerSelection) {
     // this function returns the winner of the round
     if (playerSelection == computerSelection) {
         // draw
-        let drawMessage = (`That's a draw, the player and the computer chose the same move!`);
+        let drawMessage = (`Draw! The player and computer chose the same move!`);
         console.log(drawMessage);
         narrator.textContent = drawMessage;
         return `draw`;
@@ -123,6 +122,8 @@ function playGame() {
 
 function roundCounter(rounds=5) {
     // a function that sets how many rounds should be played in a game
+    round_count++;
+    roundDisplay.textContent = `${round_count}/5`;
 }
 
 function scoreCounter(roundResult) {
