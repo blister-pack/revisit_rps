@@ -9,7 +9,7 @@ const pcChoice = document.querySelector("#pcChoice");
 const narrator = document.querySelector(".narrator");
 const playerScore = document.querySelector(".scoreBoard .playerScore");
 const pcScore = document.querySelector(".scoreBoard .pcScore");
-const roundCounter = document.querySelector(".roundCounter .roundNumber")
+const roundDisplay = document.querySelector(".roundDisplay .roundNumber")
 
 let player_score = 0;
 let pc_score = 0;
