@@ -12,6 +12,7 @@ const pcScore = document.querySelector(".scoreBoard .pcScore");
 
 let player_score = 0;
 let pc_score = 0;
+let round_count = 0;
 
 let moves_list = ["rock", "paper", "scissors"];
 
@@ -21,7 +22,19 @@ function handlePlayerChoice(event) {
     // let target = event.target;
     let playerMove = event.target.id;
     console.log("player: " + playerMove);
-    roundPlay(playerMove, getComputerChoice());
+
+    // let's do something that works before making something pretty
+    // there should be a for cycle or similar that replaces the need for
+    // initializing a counting variable
+
+    round_count++;
+
+    if (round_count < 5) {
+        roundPlay(playerMove, getComputerChoice());
+    } else {
+        console.log("game over");
+        alert("Game over!")
+    }
 }
 
 function getComputerChoice() {
