@@ -30,7 +30,8 @@ function handlePlayerChoice(event) {
     round_count++;
 
     if (round_count < 5) {
-        roundPlay(playerMove, getComputerChoice());
+        let roundResult = roundPlay(playerMove, getComputerChoice());
+        scoreCounter(roundResult);
     } else {
         console.log("game over");
         alert("Game over!")
@@ -123,23 +124,15 @@ function roundCounter(rounds=5) {
     // a function that sets how many rounds should be played in a game
 }
 
-function scoreCounter() {
+function scoreCounter(roundResult) {
     // a function that keeps track of player and pc score, also showing it on the GUI
-
-    let round_end_message = (roundPlay(getUserMove(), getComputerChoice()));
-    console.log(round_end_message);
-
-    if (round_end_message.includes("win") === true) {
+    if (roundResult === "win") {
         player_score++;
-    } else if (round_end_message.includes("lose") === true) {
+        playerScore.textContent = player_score;
+    } else if (roundResult === "lose") {
         pc_score++;
+        pcScore.textContent = pc_score;
     }
-    // if one of these messages had both keywords, would it increment in both places?
-    console.log(`PLAYER SCORE: ${player_score}`);
-    console.log(`PC SCORE: ${pc_score}`);
-
-    playerScore.textContent = player_score;
-    pcScore.textContent = pc_score;
 }
 
 // roundPlay(getUserMove(), getComputerChoice())
