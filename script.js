@@ -55,7 +55,6 @@ function getComputerChoice() {
 
 function changeComputerChoiceImage(imgName) {
     pcChoice.src = `images/${imgName}.png`;
-    // scoreCounter();
 }
 
 function roundPlay(playerSelection, computerSelection) {
