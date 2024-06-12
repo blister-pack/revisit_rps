@@ -39,6 +39,7 @@ function handlePlayerChoice(event) {
         setTimeout(() => {
             console.log("game over");
             alert("Game over!");
+            gameWinnerAnnounce();
         }, 50);
     }
 }
@@ -95,12 +96,16 @@ function scoreCounter(roundResult) {
     }
 }
 
-function gameWinnerAnnounce(playerScore=playerScore, pcScore=pcScore) {
+function roundResultAnnounce(round_Result) {
+    // Generates a message that announces the result of a round.
+}
+
+function gameWinnerAnnounce(player_Score=playerScore, pc_Score=pcScore) {
     // this function announces the game winner after the game is over
     let victoryMessage = "";
-    if (playerScore === pcScore) {
+    if (player_Score === pc_Score) {
         victoryMessage = "It's a draw!"
-    } else if (playerScore > pcScore) {
+    } else if (player_Score > pc_Score) {
         victoryMessage = "You win! Take that, computer!";
     } else {
         victoryMessage = "You lost! It's okay to cry!";
