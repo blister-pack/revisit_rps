@@ -71,34 +71,14 @@ function roundPlay(playerSelection, computerSelection) {
         (playerSelection == "scissors" && computerSelection == "paper"))
     {
         // win
-        console.log(roundResultMessage(true, playerSelection, computerSelection));
         return `win`;
     } else {
         // lose
-        console.log(roundResultMessage(false, playerSelection, computerSelection));
         return `lose`
     }
 
 }
 
-function roundResultMessage(win = true, playerSelection, computerSelection) {
-    // this is just meant to capitalize the moves, yes this could have probably been avoided
-    let formatted_playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
-    let formatted_computerSelection = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
-
-
-    if (win === true) {
-        // victory message
-        let victoryMessage = `You win! ${formatted_playerSelection} beats ${formatted_computerSelection}!`;
-        narrator.textContent = victoryMessage;
-        return victoryMessage;
-    } else {
-        // losing message
-        let lossMessage = `You lose! ${formatted_computerSelection} beats ${formatted_playerSelection}!`;
-        narrator.textContent = lossMessage;
-        return lossMessage;
-    }
-}
 
 function playGame() {
     // this function plays a game of janken with 5 rounds
