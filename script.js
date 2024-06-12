@@ -28,13 +28,18 @@ function handlePlayerChoice(event) {
     // there should be a for cycle or similar that replaces the need for
     // initializing a counting variable
 
+
     if (round_count < 5) {
         let roundResult = roundPlay(playerMove, getComputerChoice());
         scoreCounter(roundResult);
         roundCounter();
-    } else {
-        console.log("game over");
-        alert("Game over!")
+    }
+    
+    if (round_count === 5) {
+        setTimeout(() => {
+            console.log("game over");
+            alert("Game over!");
+        }, 50);
     }
 }
 
