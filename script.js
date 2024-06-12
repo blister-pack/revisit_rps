@@ -95,6 +95,20 @@ function scoreCounter(roundResult) {
     }
 }
 
+function gameWinnerAnnounce(playerScore=playerScore, pcScore=pcScore) {
+    // this function announces the game winner after the game is over
+    let victoryMessage = "";
+    if (playerScore === pcScore) {
+        victoryMessage = "It's a draw!"
+    } else if (playerScore > pcScore) {
+        victoryMessage = "You win! Take that, computer!";
+    } else {
+        victoryMessage = "You lost! It's okay to cry!";
+    }
+
+    narrator.textContent = victoryMessage;
+}
+
 // roundPlay(getUserMove(), getComputerChoice())
 
 // playGame()
