@@ -24,15 +24,11 @@ function handlePlayerChoice(event) {
     let playerMove = event.target.id;
     console.log("player: " + playerMove);
 
-    // let's do something that works before making something pretty
-    // there should be a for cycle or similar that replaces the need for
-    // initializing a counting variable
-
-
     if (round_count < 5) {
         let roundResult = roundPlay(playerMove, getComputerChoice());
         scoreCounter(roundResult);
         roundCounter();
+        roundResultAnnounce(roundResult);
     }
     
     if (round_count === 5) {
@@ -100,10 +96,13 @@ function roundResultAnnounce(roundResult) {
     // Generates a message that announces the result of a round.
     if (roundResult==="win") {
         // victory message
+        narrator.textContent = "You won that round!";
     } else if (roundResult==="lose") {
         // loss message
+        narrator.textContent = "You lost that round!";
     } else {
         // draw message
+        narrator.textContent = "It's a draw!";
     }
 }
 
@@ -111,7 +110,7 @@ function gameWinnerAnnounce(player_Score=player_score, pc_Score=pc_score) {
     // this function announces the game winner after the game is over
     let victoryMessage = "";
     if (player_Score === pc_Score) {
-        victoryMessage = "It's a draw!";
+        victoryMessage = "It's a draw! Nobody wins";
     } else if (player_Score > pc_Score) {
         victoryMessage = "You win! Take that, computer!";
     } else {
