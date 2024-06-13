@@ -96,15 +96,22 @@ function scoreCounter(roundResult) {
     }
 }
 
-function roundResultAnnounce(round_Result) {
+function roundResultAnnounce(roundResult) {
     // Generates a message that announces the result of a round.
+    if (roundResult==="win") {
+        // victory message
+    } else if (roundResult==="lose") {
+        // loss message
+    } else {
+        // draw message
+    }
 }
 
-function gameWinnerAnnounce(player_Score=playerScore, pc_Score=pcScore) {
+function gameWinnerAnnounce(player_Score=player_score, pc_Score=pc_score) {
     // this function announces the game winner after the game is over
     let victoryMessage = "";
     if (player_Score === pc_Score) {
-        victoryMessage = "It's a draw!"
+        victoryMessage = "It's a draw!";
     } else if (player_Score > pc_Score) {
         victoryMessage = "You win! Take that, computer!";
     } else {
